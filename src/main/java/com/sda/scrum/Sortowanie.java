@@ -26,13 +26,13 @@ public class Sortowanie {
         posortowana.stream().forEach(p-> System.out.print(p+","));
         System.out.println();
         Map mapa = zliczSlowa(posortowana);
-
         mapa.forEach((k,v)->System.out.println(k + "->" + v));
 
     }
 
     private static Map<String, Integer> zliczSlowa(List<String> lista) {
-        Map policzone = new HashMap();
+        Map policzone = new LinkedHashMap();
+
         for (String slowo : lista) {
             if (policzone.containsKey(slowo)){
                 Integer ile = Integer.parseInt(policzone.get(slowo).toString());
